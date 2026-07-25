@@ -9,7 +9,7 @@ function EmpProducts({ go }) {
   ];
   return (
     <div>
-      <section className="scheme-3" style={sectionPad}>
+      <section className="scheme-3 emp-section-pad" style={sectionPad}>
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
           <p style={{ fontWeight: 600, marginBottom: 16 }}>Artesanal</p>
           <h1 style={{ marginBottom: 24 }}>Nossos produtos</h1>
@@ -21,14 +21,14 @@ function EmpProducts({ go }) {
         </div>
       </section>
 
-      <section className="scheme-4" style={sectionPad}>
+      <section className="scheme-4 emp-section-pad" style={sectionPad}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ maxWidth: 480, margin: "0 auto 80px", textAlign: "center" }}>
             <p style={{ fontWeight: 600, marginBottom: 16 }}>Categorias</p>
             <h2 style={{ marginBottom: 24 }}>Escolha o seu sabor</h2>
             <p className="text-medium">Cada pote carrega a tradição da Serra da Canastra.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 32 }}>
+          <div className="emp-grid-cats" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 32 }}>
             <Card style={{ gridRow: "span 2", padding: 48, background: "var(--color-neutral-darkest)", display: "flex", flexDirection: "column", justifyContent: "center", gap: 16 }}>
               <p className="text-small" style={{ fontWeight: 600 }}>Artesanal</p>
               <h3 style={{ fontSize: 28 }}>Antepastos e patês cremosos da cozinha mineira</h3>
@@ -47,8 +47,8 @@ function EmpProducts({ go }) {
         </div>
       </section>
 
-      <section className="scheme-1" style={sectionPad}>
-        <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+      <section className="scheme-1 emp-section-pad" style={sectionPad}>
+        <div className="emp-grid-2" style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
           <div>
             <p style={{ fontWeight: 600, marginBottom: 16 }}>Curadoria</p>
             <h2 style={{ marginBottom: 24 }}>Mais de 80 motivos para abrir o apetite</h2>
@@ -62,7 +62,7 @@ function EmpProducts({ go }) {
         </div>
       </section>
 
-      <section className="scheme-2" style={sectionPad}>
+      <section className="scheme-2 emp-section-pad" style={sectionPad}>
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ marginBottom: 24 }}>O app está te esperando</h2>
           <p className="text-medium" style={{ marginBottom: 32 }}>Mais de 80 produtos mineiros esperam por você no nosso app. Baixe agora e explore todos.</p>

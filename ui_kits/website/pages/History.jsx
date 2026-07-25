@@ -10,7 +10,7 @@ function EmpHistory({ go }) {
   ];
   return (
     <div>
-      <section className="scheme-3" style={sectionPad}>
+      <section className="scheme-3 emp-section-pad" style={sectionPad}>
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
           <p style={{ fontWeight: 600, marginBottom: 16 }}>Origem</p>
           <h1 style={{ marginBottom: 24 }}>Nossa história</h1>
@@ -22,13 +22,13 @@ function EmpHistory({ go }) {
         </div>
       </section>
 
-      <section className="scheme-1" style={sectionPad}>
-        <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+      <section className="scheme-1 emp-section-pad" style={sectionPad}>
+        <div className="emp-grid-2" style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
           <div>
             <p style={{ fontWeight: 600, marginBottom: 16 }}>Raiz</p>
             <h2 style={{ marginBottom: 24 }}>O fogo brando que vem da serra</h2>
             <p className="text-medium" style={{ marginBottom: 32 }}>Tudo começa com as mãos de quem conhece a terra. A mesma paciência do fogão a lenha está em cada receita que chega até você.</p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+            <div className="emp-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
               <div><h6 style={{ marginBottom: 12 }}>Parceiros</h6><p>Famílias que transformam o leite, a fruta e a pimenta em pura memória afetiva.</p></div>
               <div><h6 style={{ marginBottom: 12 }}>Feito à mão</h6><p>Nenhum pote é igual ao outro, cada um carrega o tempo certo e o carinho de Minas.</p></div>
             </div>
@@ -37,12 +37,12 @@ function EmpHistory({ go }) {
         </div>
       </section>
 
-      <section className="scheme-4" style={sectionPad}>
+      <section className="scheme-4 emp-section-pad" style={sectionPad}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Tabs defaultValue="2015">
             <TabsList items={years.map((y) => ({ value: y.value, label: y.label }))} />
             {years.map((y) => (
-              <TabsContent key={y.value} value={y.value} style={{ gridTemplateColumns: "1fr 1fr", alignItems: "center" }}>
+              <TabsContent key={y.value} value={y.value} className="emp-grid-2" style={{ gridTemplateColumns: "1fr 1fr", alignItems: "center" }}>
                 <div>
                   <h3 style={{ marginBottom: 12 }}>{y.value}</h3>
                   <h4 style={{ marginBottom: 24 }}>{y.title}</h4>
@@ -55,14 +55,14 @@ function EmpHistory({ go }) {
         </div>
       </section>
 
-      <section className="scheme-1" style={sectionPad}>
+      <section className="scheme-1 emp-section-pad" style={sectionPad}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ maxWidth: 480, margin: "0 auto 80px", textAlign: "center" }}>
             <p style={{ fontWeight: 600, marginBottom: 16 }}>Essência</p>
             <h2 style={{ marginBottom: 24 }}>O que nos move</h2>
             <p className="text-medium">Três pilares simples que sustentam cada pote que chega até você.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 32 }}>
+          <div className="emp-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 32 }}>
             <Card style={{ gridRow: "span 2", padding: 48, display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div style={{ height: 200, borderRadius: "var(--radius-image)", background: "var(--color-neutral-lighter)", marginBottom: 24 }} />
               <p className="text-small" style={{ fontWeight: 600, marginBottom: 8 }}>Feito à mão</p>
@@ -95,7 +95,7 @@ function EmpHistory({ go }) {
         </div>
       </section>
 
-      <section className="scheme-2" style={sectionPad}>
+      <section className="scheme-2 emp-section-pad" style={sectionPad}>
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ marginBottom: 24 }}>A mesa espera por você</h2>
           <p className="text-medium" style={{ marginBottom: 32 }}>Explore nossos antepastos, geleias e doces. A história continua no seu próximo pedido, direto no aplicativo.</p>

@@ -71,6 +71,7 @@ function Button({
   disabled,
   children,
   style,
+  className,
   onMouseDown,
   onMouseUp,
   onMouseLeave,
@@ -86,6 +87,7 @@ function Button({
   return /*#__PURE__*/React.createElement("button", _extends({
     "data-slot": "button",
     "data-variant": variant,
+    className: className ? "emp-focusable " + className : "emp-focusable",
     disabled: disabled,
     onMouseEnter: e => {
       setHover(true);
@@ -179,6 +181,7 @@ function Card({
   };
   return /*#__PURE__*/React.createElement("div", _extends({
     "data-slot": "card-flat",
+    className: className,
     style: {
       borderRadius: "var(--radius-card)",
       overflow: "hidden",
@@ -214,6 +217,7 @@ function Input({
     }
   }, icon), /*#__PURE__*/React.createElement("input", _extends({
     "data-slot": "input",
+    className: "emp-focusable",
     style: {
       width: "100%",
       minHeight: 44,
@@ -282,6 +286,10 @@ function AccordionTrigger({
   const isOpen = ctx.open.has(value);
   return /*#__PURE__*/React.createElement("button", {
     onClick: () => ctx.toggle(value),
+    className: "emp-focusable",
+    "aria-expanded": isOpen,
+    "aria-controls": "emp-accordion-panel-" + value,
+    id: "emp-accordion-trigger-" + value,
     style: {
       display: "flex",
       width: "100%",
@@ -313,6 +321,9 @@ function AccordionContent({
   const ctx = React.useContext(AccordionCtx);
   const isOpen = ctx.open.has(value);
   return /*#__PURE__*/React.createElement("div", {
+    id: "emp-accordion-panel-" + value,
+    role: "region",
+    "aria-labelledby": "emp-accordion-trigger-" + value,
     style: {
       display: "grid",
       gridTemplateRows: isOpen ? "1fr" : "0fr",
@@ -358,7 +369,7 @@ function TabsList({
 }) {
   const ctx = React.useContext(TabsCtx);
   const activeIndex = items.findIndex(i => i.value === ctx.value);
-  const progress = `${100 / (items.length * 2) * (activeIndex * 2 + 1)}%`;
+  const progress = 100 / (items.length * 2) * (activeIndex * 2 + 1) / 100;
   return /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
@@ -373,9 +384,11 @@ function TabsList({
       bottom: 14,
       left: 0,
       height: 3,
-      width: progress,
+      width: "100%",
       background: "var(--scheme-text)",
-      transition: "width 0.3s ease",
+      transform: `scaleX(${progress})`,
+      transformOrigin: "left",
+      transition: "transform 0.3s ease",
       zIndex: 1
     }
   }), items.map((item, i) => {
@@ -383,6 +396,7 @@ function TabsList({
     return /*#__PURE__*/React.createElement("button", {
       key: item.value,
       onClick: () => ctx.set(item.value),
+      className: "emp-focusable",
       style: {
         flex: 1,
         display: "flex",
@@ -480,6 +494,7 @@ function Footer() {
       margin: "0 auto"
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "emp-footer-top",
     style: {
       display: "grid",
       gridTemplateColumns: "1.5fr 1fr",
@@ -551,6 +566,7 @@ function Footer() {
     },
     src: `https://cdn.simpleicons.org/${s.name === "x" ? "x" : s.name}/000000`
   }))))), /*#__PURE__*/React.createElement("div", {
+    className: "emp-footer-links",
     style: {
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
@@ -648,7 +664,8 @@ const LINKS = [{
 function NavLink({
   l,
   active,
-  onNavigate
+  onNavigate,
+  onClick
 }) {
   const [hover, setHover] = React.useState(false);
   return /*#__PURE__*/React.createElement("a", {
@@ -658,32 +675,19 @@ function NavLink({
     onClick: e => {
       e.preventDefault();
       onNavigate && onNavigate(l.label);
+      onClick && onClick();
     },
+    className: "emp-focusable",
     style: {
       padding: "8px 12px",
       fontSize: "var(--text-regular)",
       textDecoration: "none",
       color: hover ? "var(--color-di-serria)" : "var(--color-white-linen)",
       fontWeight: active === l.label ? 700 : 400,
-      transition: "color 0.2s ease"
+      transition: "color 0.2s ease",
+      borderRadius: "var(--radius-button)"
     }
   }, l.label);
-}
-function IconButton({
-  children,
-  label
-}) {
-  return /*#__PURE__*/React.createElement("button", {
-    "aria-label": label,
-    style: {
-      background: "none",
-      border: "none",
-      padding: 8,
-      display: "inline-flex",
-      cursor: "pointer",
-      color: "var(--color-white-linen)"
-    }
-  }, children);
 }
 function CtaButton({
   children
@@ -692,6 +696,7 @@ function CtaButton({
   return /*#__PURE__*/React.createElement("button", {
     onMouseEnter: () => setHover(true),
     onMouseLeave: () => setHover(false),
+    className: "emp-focusable",
     style: {
       position: "relative",
       overflow: "hidden",
@@ -734,20 +739,110 @@ function CtaButton({
       zIndex: 1,
       pointerEvents: "none"
     }
-  }, "\u2197"), /*#__PURE__*/React.createElement("span", {
+  }, "↗"), /*#__PURE__*/React.createElement("span", {
     style: {
       position: "relative",
       zIndex: 1
-    }
+    },
+    className: "emp-navbar-cta-label"
   }, children));
 }
+function HamburgerButton({
+  open,
+  onClick,
+  buttonRef
+}) {
+  return /*#__PURE__*/React.createElement("button", {
+    ref: buttonRef,
+    "aria-label": open ? "Fechar menu" : "Abrir menu",
+    "aria-expanded": open,
+    "aria-controls": "emp-mobile-drawer",
+    onClick: onClick,
+    className: "emp-focusable emp-navbar-hamburger",
+    style: {
+      width: 44,
+      height: 44,
+      borderRadius: "50%",
+      background: "var(--color-di-serria)",
+      border: "none",
+      cursor: "pointer",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 3,
+      flex: "none"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 18,
+      height: 2,
+      background: "var(--color-van-cleef-darkest)",
+      borderRadius: 1,
+      transition: "transform 0.25s ease, opacity 0.25s ease",
+      transform: open ? "translateY(5px) rotate(45deg)" : "none"
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 18,
+      height: 2,
+      background: "var(--color-van-cleef-darkest)",
+      borderRadius: 1,
+      transition: "opacity 0.2s ease",
+      opacity: open ? 0 : 1
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 18,
+      height: 2,
+      background: "var(--color-van-cleef-darkest)",
+      borderRadius: 1,
+      transition: "transform 0.25s ease, opacity 0.25s ease",
+      transform: open ? "translateY(-5px) rotate(-45deg)" : "none"
+    }
+  }));
+}
 
-/** Fixed floating navbar — nav links left, centered logo, search/account/CTA/hamburger right. */
+/** Fixed floating navbar — nav links left, centered logo, CTA/hamburger right. Hamburger opens a mobile drawer with the same nav links below 1024px. */
 function Navbar({
   active = "Início",
   onNavigate
 }) {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const hamburgerRef = React.useRef(null);
+  const drawerRef = React.useRef(null);
+  const closeDrawer = (returnFocus) => {
+    setDrawerOpen(false);
+    if (returnFocus && hamburgerRef.current) hamburgerRef.current.focus();
+  };
+  React.useEffect(() => {
+    if (!drawerOpen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const first = drawerRef.current && drawerRef.current.querySelector("a,button");
+    first && first.focus();
+    const onKey = e => {
+      if (e.key === "Escape") { closeDrawer(true); return; }
+      if (e.key !== "Tab" || !drawerRef.current) return;
+      const focusables = Array.from(drawerRef.current.querySelectorAll("a,button"));
+      if (!focusables.length) return;
+      const firstEl = focusables[0];
+      const lastEl = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === firstEl) {
+        e.preventDefault();
+        lastEl.focus();
+      } else if (!e.shiftKey && document.activeElement === lastEl) {
+        e.preventDefault();
+        firstEl.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [drawerOpen]);
   return /*#__PURE__*/React.createElement("div", {
+    className: "emp-navbar-shell",
     style: {
       position: "fixed",
       top: 0,
@@ -755,10 +850,11 @@ function Navbar({
       right: 0,
       zIndex: 999,
       display: "flex",
-      justifyContent: "center",
-      padding: "20px 5%"
+      flexDirection: "column",
+      alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "emp-navbar-bar",
     style: {
       position: "relative",
       display: "flex",
@@ -766,7 +862,6 @@ function Navbar({
       justifyContent: "space-between",
       gap: 16,
       minHeight: 64,
-      width: 1100,
       maxWidth: "100%",
       padding: "0 12px 0 24px",
       borderRadius: 9999,
@@ -774,8 +869,8 @@ function Navbar({
       boxShadow: "0 8px 30px rgba(13,12,12,0.25)"
     }
   }, /*#__PURE__*/React.createElement("nav", {
+    className: "emp-navbar-links",
     style: {
-      display: "flex",
       alignItems: "center",
       gap: 4
     }
@@ -787,71 +882,57 @@ function Navbar({
   }))), /*#__PURE__*/React.createElement("img", {
     src: "../../assets/logos/logo-mark-cream.png",
     alt: "Emp\xF3rio Coisas de Minas",
+    className: "emp-navbar-logo",
     style: {
       position: "absolute",
       left: "50%",
       top: "50%",
-      transform: "translate(-50%,-50%)",
-      height: 78
+      transform: "translate(-50%,-50%)"
     }
   }), /*#__PURE__*/React.createElement("div", {
+    className: "emp-navbar-actions",
     style: {
       display: "flex",
-      alignItems: "center",
-      gap: 4
+      alignItems: "center"
     }
-  }, /*#__PURE__*/React.createElement(IconButton, {
-    label: "Buscar"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "https://cdn.jsdelivr.net/npm/@material-symbols/svg-500@latest/rounded/search.svg",
-    width: "20",
+  }, /*#__PURE__*/React.createElement(CtaButton, null, "Pe\xE7a pelo App"), /*#__PURE__*/React.createElement(HamburgerButton, {
+    open: drawerOpen,
+    buttonRef: hamburgerRef,
+    onClick: () => setDrawerOpen(o => !o)
+  }))), /*#__PURE__*/React.createElement("div", {
+    ref: drawerRef,
+    id: "emp-mobile-drawer",
+    className: "emp-navbar-drawer",
+    "data-open": drawerOpen ? "true" : "false",
+    "aria-hidden": !drawerOpen,
     style: {
-      filter: "invert(1)"
+      width: "calc(100% - 10%)",
+      maxWidth: 420,
+      marginTop: 8,
+      display: "grid",
+      gridTemplateRows: drawerOpen ? "1fr" : "0fr",
+      opacity: drawerOpen ? 1 : 0,
+      transition: "grid-template-rows 0.3s ease, opacity 0.2s ease"
     }
-  })), /*#__PURE__*/React.createElement(IconButton, {
-    label: "Conta"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "https://cdn.jsdelivr.net/npm/@material-symbols/svg-500@latest/rounded/person.svg",
-    width: "20",
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
-      filter: "invert(1)"
-    }
-  })), /*#__PURE__*/React.createElement(CtaButton, null, "Pe\xE7a pelo App"), /*#__PURE__*/React.createElement("button", {
-    "aria-label": "Menu",
-    style: {
-      width: 44,
-      height: 44,
-      borderRadius: "50%",
-      background: "var(--color-di-serria)",
-      border: "none",
-      cursor: "pointer",
+      minHeight: 0,
+      overflow: "hidden",
       display: "flex",
       flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: 3
+      alignItems: "stretch",
+      gap: 4,
+      padding: 16,
+      borderRadius: 24,
+      background: "var(--color-van-cleef)",
+      boxShadow: "0 8px 30px rgba(13,12,12,0.25)"
     }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      width: 18,
-      height: 2,
-      background: "var(--color-van-cleef-darkest)",
-      borderRadius: 1
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      width: 18,
-      height: 2,
-      background: "var(--color-van-cleef-darkest)",
-      borderRadius: 1
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      width: 18,
-      height: 2,
-      background: "var(--color-van-cleef-darkest)",
-      borderRadius: 1
-    }
+  }, LINKS.map(l => /*#__PURE__*/React.createElement(NavLink, {
+    key: l.label,
+    l: l,
+    active: active,
+    onNavigate: onNavigate,
+    onClick: () => closeDrawer(false)
   })))));
 }
 Object.assign(__ds_scope, { Navbar });
