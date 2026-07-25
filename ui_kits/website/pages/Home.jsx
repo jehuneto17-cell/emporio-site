@@ -151,14 +151,18 @@ function EmpHome({ go }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 32 }}>
             {[
               { name: "Ana Clara", city: "Cliente de São Paulo", img: "depoimento-ana-clara.jpg", quote: "O antepasto de berinjela defumada me levou direto para a roça. Sabor de comida feita com calma." },
-              { name: "João Pedro", city: "Cliente de Uberlândia", img: "depoimento-joao-pedro.jpg", quote: "A geleia de pimenta biquinho com cachaça é um espetáculo. Combina com tudo, do queijo ao churrasco." },
+              { name: "João Pedro", city: "Cliente de Uberlândia", img: null, quote: "A geleia de pimenta biquinho com cachaça é um espetáculo. Combina com tudo, do queijo ao churrasco." },
               { name: "Mariana Souza", city: "Cliente de Belo Horizonte", img: "depoimento-mariana.jpg", quote: "Presenteei minha família com a cesta de doces. O doce de leite com cumaru é inesquecível." },
             ].map((t) => (
               <Card key={t.name} style={{ padding: 32, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <p style={{ marginBottom: 24, color: "var(--color-van-cleef)" }}>★★★★★</p>
                 <h5 style={{ fontWeight: 400, fontSize: 20, marginBottom: 24 }}>"{t.quote}"</h5>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <img src={`../../assets/images/${t.img}`} style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover" }} />
+                  {t.img ? (
+                    <img src={`../../assets/images/${t.img}`} style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover" }} />
+                  ) : (
+                    <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--color-neutral-lighter)" }} />
+                  )}
                   <div><p style={{ fontWeight: 600 }}>{t.name}</p><p>{t.city}</p></div>
                 </div>
               </Card>
