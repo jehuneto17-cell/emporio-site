@@ -44,6 +44,10 @@
   .ver-produtos:hover { background:#fcf9f5; color:#52170c; transform:scale(1.03); }
   .credit-link:hover { color:#d8a360; border-bottom-color:#d8a360; }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  @media (max-width: 480px) {
+    .section-pad { padding-left: 20px !important; padding-right: 20px !important; }
+    .contact-card { min-width: 0 !important; padding: 24px !important; }
+  }
 </style>
 </head>
 <body>
@@ -97,7 +101,7 @@
   </div>
 </section>
 
-<section style="background:#fcf9f5;padding:80px 40px 60px">
+<section class="section-pad" style="background:#fcf9f5;padding:80px 40px 60px">
   <div style="max-width:1240px;margin:0 auto">
     <div data-reveal="" style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:clamp(32px,4vw,48px)">
       <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,42px);line-height:1.08;letter-spacing:-.03em;color:#52170c;margin:0">O que tem na despensa</h2>
@@ -150,7 +154,7 @@
   </div>
 </section>
 
-<section id="historia" style="background:#f6ede2;padding:100px 40px">
+<section id="historia" class="section-pad" style="background:#f6ede2;padding:100px 40px">
   <div style="max-width:1140px;margin:0 auto">
     <div data-reveal="" style="max-width:640px;margin-bottom:clamp(44px,6vw,72px)">
       <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#964904;font-weight:600">Nossa história</span>
@@ -200,7 +204,7 @@
   </div>
 </section>
 
-<section id="produtos" style="background:#fcf9f5;padding:100px 40px">
+<section id="produtos" class="section-pad" style="background:#fcf9f5;padding:100px 40px">
   <div style="max-width:1240px;margin:0 auto">
     <div data-reveal="" style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:18px;margin-bottom:clamp(32px,4vw,52px)">
       <div>
@@ -340,7 +344,7 @@
   </div>
 </section>
 
-<section id="como" style="background:#f6ede2;padding:100px 40px">
+<section id="como" class="section-pad" style="background:#f6ede2;padding:100px 40px">
   <div style="max-width:1080px;margin:0 auto">
     <h2 data-reveal="" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.06;letter-spacing:-.032em;color:#52170c;margin:0 0 clamp(36px,5vw,56px);max-width:16ch">Três toques até a sua mesa</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(20px,3vw,36px)">
@@ -364,7 +368,7 @@
   </div>
 </section>
 
-<section style="background:#fcf9f5;padding:100px 40px">
+<section class="section-pad" style="background:#fcf9f5;padding:100px 40px">
   <div style="max-width:1180px;margin:0 auto">
     <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,60px);align-items:center;justify-content:space-between;margin-bottom:clamp(40px,5vw,64px)">
       <h2 data-reveal="" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.06;letter-spacing:-.032em;color:#52170c;margin:0;flex:1 1 320px">Quem prova, volta</h2>
@@ -399,7 +403,7 @@
   </div>
 </section>
 
-<section id="onde" style="background:#fcf9f5;padding:80px 60px;border-top:1px solid #ece0d3">
+<section id="onde" class="section-pad" style="background:#fcf9f5;padding:80px 60px;border-top:1px solid #ece0d3">
   <div style="max-width:1240px;margin:0 auto">
     <div data-reveal="" style="max-width:640px;margin-bottom:clamp(32px,4vw,48px)">
       <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.08;color:#52170c;margin:0 0 12px">Onde nos encontrar</h2>
@@ -409,7 +413,7 @@
       <div data-reveal="" style="flex:1 1 460px;min-width:280px">
         <iframe title="Mapa — Empório Coisas de Minas, Rua dos Piantinos 657, Passos MG" src="https://www.google.com/maps?q=Rua%20dos%20Piantinos%2C%20657%2C%20Passos%20-%20MG&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%;height:450px;min-height:350px;border:0;display:block;border-radius:16px;box-shadow:0 12px 30px rgba(82,23,12,.12)"></iframe>
       </div>
-      <div data-reveal="" style="flex:1 1 320px;min-width:280px;background:#f6ede2;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:26px">
+      <div data-reveal="" class="contact-card" style="flex:1 1 320px;min-width:280px;background:#f6ede2;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:26px">
         <div style="display:flex;gap:14px;align-items:flex-start">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d8a360" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           <div style="flex:1 1 auto;min-width:0">
@@ -444,7 +448,7 @@
   </div>
 </section>
 
-<section style="background:#52170c;color:#fcf9f5;padding:100px 40px">
+<section class="section-pad" style="background:#52170c;color:#fcf9f5;padding:100px 40px">
   <div style="max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(32px,5vw,72px);text-align:center">
     <div data-reveal="" style="flex:1 1 380px;text-align:left">
       <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4.6vw,54px);line-height:1.05;letter-spacing:-.034em;margin:0 0 16px;text-wrap:balance">Baixe o app e receba Minas em casa</h2>
@@ -461,7 +465,7 @@
   </div>
 </section>
 
-<footer id="contato" style="background:#3d1108;color:#e0c4ae;padding:60px 40px 28px">
+<footer id="contato" class="section-pad" style="background:#3d1108;color:#e0c4ae;padding:60px 40px 28px">
   <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));align-items:start;gap:clamp(28px,4vw,56px)">
     <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
       <img src="images/logo.png" alt="Empório Coisas de Minas" style="height: 118px; width: auto; display: block">
