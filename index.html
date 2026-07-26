@@ -48,6 +48,24 @@
     .section-pad { padding-left: 20px !important; padding-right: 20px !important; }
     .contact-card { min-width: 0 !important; padding: 24px !important; }
   }
+  .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: clamp(16px, 2vw, 28px); }
+  @media (max-width: 767px) {
+    .cat-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 16px;
+      margin: 0 -40px;
+      padding: 0 40px 8px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .cat-grid::-webkit-scrollbar { display: none; }
+    .cat-grid .cat-item { flex: 0 0 65%; min-width: 65%; }
+  }
+  @media (max-width: 480px) {
+    .cat-grid { margin: 0 -20px; padding: 0 20px 8px; }
+  }
 </style>
 </head>
 <body>
@@ -107,44 +125,44 @@
       <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,42px);line-height:1.08;letter-spacing:-.03em;color:#52170c;margin:0">O que tem na despensa</h2>
       <p style="font-size:14px;color:#7a5a4a;margin:0">Sete famílias de sabor, uma só origem.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(16px,2vw,28px)">
-      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
+    <div class="cat-grid">
+      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link cat-item" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-antepastos.png" alt="Antepastos e Patês" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Antepastos e Patês</span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
+      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link cat-item" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-doces.png" alt="Doces em Geral" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Doces em Geral</span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
+      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link cat-item" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-pimenta.png" alt="Geleia de Pimenta" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Geleia de Pimenta</span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
+      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link cat-item" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-pimentas-molhos.png" alt="Pimentas e Molhos" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Pimentas e Molhos</span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
+      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link cat-item" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-torradas.png" alt="Torradas e Pães" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Torradas e Pães</span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
+      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link cat-item" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-vinhos.png" alt="Vinhos" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Vinhos</span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
+      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link cat-item" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-cafes.png" alt="Cafés Artesanais" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
