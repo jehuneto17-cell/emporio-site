@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   html { scroll-behavior: smooth; scroll-padding-top: 84px; }
-  body { margin: 0; background: #fcf9f5; font-family: 'Work Sans', system-ui, sans-serif; color: #2e1a12; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body { margin: 0; background: #fcf9f5; font-family: 'Work Sans', system-ui, sans-serif; color: #2e1a12; -webkit-font-smoothing: antialiased; }
   a { color: #964904; text-decoration: none; }
   a:hover { color: #52170c; }
   img { max-width: 100%; }
@@ -22,7 +22,6 @@
   @keyframes heroPar { from { transform: translateY(0); } to { transform: translateY(28vh); } }
   [data-hero-par] { animation: heroPar linear both; animation-timeline: scroll(root); animation-range: 0 100svh; }
   @keyframes pulsedown { 0%,100% { transform: translateY(0); opacity: .75; } 50% { transform: translateY(9px); opacity: 1; } }
-  @keyframes shine { 0% { transform: translateX(-120%) skewX(-18deg); } 60%,100% { transform: translateX(320%) skewX(-18deg); } }
   @media (max-width: 900px) { [data-navmenu] { display: none !important; } }
   [data-navmenu] a { color: #fcf9f5; transition: color .3s ease; white-space: nowrap; }
   [data-navmenu] a:hover { color: #d8a360; }
@@ -32,9 +31,8 @@
   [data-header][data-solid="1"] [data-logo] { filter: invert(1) sepia(1) saturate(6) hue-rotate(-22deg) brightness(.42); }
   [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
   [data-reveal].is-visible { opacity: 1 !important; transform: none !important; }
-  .cta-play { position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:12px; background:#d8a360; color:#52170c; padding:12px 26px 12px 22px; border-radius:16px; min-height:60px; box-shadow:0 16px 34px rgba(61,17,8,.4); transition:transform .25s ease,background .25s ease; }
+  .cta-play { position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:12px; background:#d8a360; color:#52170c; padding:12px 26px 12px 22px; border-radius:16px; min-height:60px; box-shadow:0 8px 20px rgba(0,0,0,.22); transition:transform .25s ease,background .25s ease; }
   .cta-play:hover { background:#e8bb7f; transform:translateY(-2px) scale(1.02); color:#52170c; }
-  .cta-play .shine { position:absolute; top:0; bottom:0; left:0; width:38px; background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0)); animation:shine 4.5s ease-in-out infinite; }
   .cat-link:hover { transform:translateY(-6px) scale(1.03); color:#52170c; }
   .prod-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(82,23,12,.12); }
   .prod-link:hover { color:#52170c; }
@@ -51,18 +49,18 @@
 <body>
 <div>
 
-<header data-header="" data-solid="0" id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:60;transition:background .35s ease, box-shadow .35s ease, border-color .35s ease, padding .35s ease;padding:4px 0;background:rgba(61,17,8,.34);-webkit-backdrop-filter:blur(12px) saturate(120%);backdrop-filter:blur(12px) saturate(120%);border-bottom:1px solid rgba(252,249,245,.14);box-shadow:0 2px 18px rgba(61,17,8,.14)">
+<header data-header="" data-solid="0" id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:60;transition:background .35s ease, box-shadow .35s ease, border-color .35s ease;padding:3px 0;background:rgba(61,17,8,.34);-webkit-backdrop-filter:blur(12px) saturate(120%);backdrop-filter:blur(12px) saturate(120%);border-bottom:1px solid rgba(252,249,245,.14);box-shadow:0 2px 18px rgba(61,17,8,.14)">
   <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(18px,4vw,40px); display: flex; align-items: center; gap: 24px">
     <a href="#topo" aria-label="Empório Coisas de Minas" style="display:flex;align-items:center;flex:0 0 auto">
       <img data-logo="" src="images/logo.png" alt="Empório Coisas de Minas" style="height: 72px; width: 79px; display: block">
     </a>
     <nav data-navmenu="" style="flex:1;display:flex;justify-content:center;gap:clamp(16px,2.4vw,34px)">
-      <a href="#produtos" style="font-size:15px;font-weight:500">Produtos</a>
-      <a href="#historia" style="font-size:15px;font-weight:500">Nossa História</a>
-      <a href="#como" style="font-size:15px;font-weight:500">Como Funciona</a>
-      <a href="#contato" style="font-size:15px;font-weight:500">Contato</a>
+      <a href="#produtos" style="font-size:14px;font-weight:500">Produtos</a>
+      <a href="#historia" style="font-size:14px;font-weight:500">Nossa História</a>
+      <a href="#como" style="font-size:14px;font-weight:500">Como Funciona</a>
+      <a href="#contato" style="font-size:14px;font-weight:500">Contato</a>
     </nav>
-    <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" style="margin-left: auto; flex: 0 0 auto; background: #d8a360; color: #52170c; font-family: 'Plus Jakarta Sans',sans-serif; font-weight: 800; font-size: 15px; padding: 11px 22px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; transition: transform .25s ease,background .25s ease" onmouseover="this.style.background='#e8bb7f';this.style.transform='scale(1.04)'" onmouseout="this.style.background='#d8a360';this.style.transform='none'">Baixar o App</a>
+    <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" style="margin-left: auto; flex: 0 0 auto; background: #d8a360; color: #52170c; font-family: 'Plus Jakarta Sans',sans-serif; font-weight: 800; font-size: 16px; padding: 11px 22px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; transition: transform .25s ease,background .25s ease" onmouseover="this.style.background='#e8bb7f';this.style.transform='scale(1.04)'" onmouseout="this.style.background='#d8a360';this.style.transform='none'">Baixar o App</a>
   </div>
 </header>
 
@@ -75,85 +73,84 @@
   <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(82,23,12,.5) 0%,rgba(82,23,12,.28) 22%,rgba(82,23,12,.04) 48%,rgba(82,23,12,0) 100%)"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(105% 95% at 14% 62%,rgba(61,17,8,.66) 0%,rgba(61,17,8,.44) 38%,rgba(61,17,8,.14) 62%,rgba(61,17,8,0) 80%)"></div>
   <div style="position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;color:#fcf9f5;animation:pulsedown 2.2s ease-in-out infinite;z-index:3">
-    <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase">Role</span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase">Role</span>
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
   </div>
-  <div style="position: relative; z-index: 2; width: 100%; max-width: 1240px; margin: 0 auto; padding: clamp(140px,18vh,200px) clamp(24px,5vw,48px) clamp(88px,12vh,132px)">
+  <div style="position: relative; z-index: 2; width: 100%; max-width: 1240px; margin: 0 auto; padding: 160px 40px 100px">
     <div style="max-width:660px">
-      <span data-reveal="" style="display:inline-flex;align-items:center;gap:8px;background:rgba(252,249,245,.14);border:1px solid rgba(252,249,245,.28);backdrop-filter:blur(6px);color:#fcf9f5;font-size:13px;font-weight:600;letter-spacing:.02em;padding:8px 16px;border-radius:999px">🌱 Artesanal • Serra da Canastra</span>
-      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(40px,6vw,76px);line-height:1.02;letter-spacing:-.034em;color:#fcf9f5;margin:22px 0 0;text-shadow:0 2px 24px rgba(61,17,8,.45);text-wrap:balance">
+      <span data-reveal="" style="display:inline-flex;align-items:center;gap:8px;background:rgba(252,249,245,.14);border:1px solid rgba(252,249,245,.28);backdrop-filter:blur(6px);color:#fcf9f5;font-size:14px;font-weight:600;letter-spacing:.02em;padding:8px 16px;border-radius:999px">🌱 Artesanal • Serra da Canastra</span>
+      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(40px,6vw,76px);line-height:1.02;letter-spacing:-.034em;color:#fcf9f5;margin:22px 0 0;text-shadow:0 1px 3px rgba(0,0,0,.55);text-wrap:balance">
         <span style="display:block;overflow:hidden"><span data-reveal="" style="display:block;transition-delay:80ms">O sabor de Minas,</span></span>
         <span style="display:block;overflow:hidden"><span data-reveal="" style="display:block;transition-delay:200ms">na palma da</span></span>
         <span style="display:block;overflow:hidden"><span data-reveal="" style="display:block;transition-delay:320ms">sua mão</span></span>
       </h1>
-      <p data-reveal="" style="transition-delay:420ms;font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:#f0dcc9;margin:20px 0 0;max-width:44ch;text-shadow:0 1px 12px rgba(61,17,8,.5)">Antepastos, geleias, doces, cafés e vinhos artesanais — direto no seu app.</p>
+      <p data-reveal="" style="transition-delay:420ms;font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:#f0dcc9;margin:20px 0 0;max-width:44ch;text-shadow:0 1px 2px rgba(0,0,0,.5)">Antepastos, geleias, doces, cafés e vinhos artesanais — direto no seu app.</p>
       <div data-reveal="" style="transition-delay:520ms;display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:30px">
         <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" aria-label="Disponível no Google Play" class="cta-play">
           <svg width="27" height="30" viewBox="0 0 512 566" aria-hidden="true"><path fill="#52170c" d="M20 8C10 18 4 33 4 53v460c0 20 6 35 16 45l2 2 258-258v-6L22 38z"></path><path fill="#7a3418" d="M366 397 280 311v-6l86-86 2 1 102 58c29 17 29 44 0 61z"></path><path fill="#6b2612" d="m368 396-88-88L20 568c10 10 25 11 43 1z"></path><path fill="#3d1108" d="M368 220 63 47C45 37 30 38 20 48l260 260z"></path></svg>
-          <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#7a3418">Disponível no</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.01em;white-space:nowrap">Google Play</span></span>
-          <span class="shine"></span>
+          <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#7a3418">Disponível no</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.01em;white-space:nowrap">Google Play</span></span>
         </a>
         <a href="#produtos" class="ver-produtos" style="display:inline-flex;align-items:center;min-height:60px;padding:0 28px;border-radius:999px;border:2px solid rgba(252,249,245,.6);background:rgba(252,249,245,.08);backdrop-filter:blur(6px);color:#fcf9f5;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;transition:background .25s ease,color .25s ease,transform .25s ease">Ver produtos</a>
       </div>
-      <p data-reveal="" style="transition-delay:620ms;font-size:15px;color:#e8d3c0;margin:24px 0 0;text-shadow:0 1px 10px rgba(61,17,8,.5)">⭐ +500 clientes felizes • +120 produtos</p>
+      <p data-reveal="" style="transition-delay:620ms;font-size:14px;color:#e8d3c0;margin:24px 0 0;text-shadow:0 1px 2px rgba(0,0,0,.5)">⭐ +500 clientes felizes • +120 produtos</p>
     </div>
   </div>
 </section>
 
-<section style="background:#fcf9f5;padding:clamp(64px,8vw,104px) clamp(18px,4vw,40px) clamp(48px,6vw,72px)">
+<section style="background:#fcf9f5;padding:80px 40px 60px">
   <div style="max-width:1240px;margin:0 auto">
     <div data-reveal="" style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:clamp(32px,4vw,48px)">
       <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,42px);line-height:1.08;letter-spacing:-.03em;color:#52170c;margin:0">O que tem na despensa</h2>
-      <p style="font-size:15px;color:#8a6a5b;margin:0">Sete famílias de sabor, uma só origem.</p>
+      <p style="font-size:14px;color:#7a5a4a;margin:0">Sete famílias de sabor, uma só origem.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(16px,2vw,28px)">
       <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-antepastos.png" alt="Antepastos e Patês" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;line-height:1.25;color:#52170c">Antepastos e Patês</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Antepastos e Patês</span>
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-doces.png" alt="Doces em Geral" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;line-height:1.25;color:#52170c">Doces em Geral</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Doces em Geral</span>
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-pimenta.png" alt="Geleia de Pimenta" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;line-height:1.25;color:#52170c">Geleia de Pimenta</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Geleia de Pimenta</span>
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-pimentas-molhos.png" alt="Pimentas e Molhos" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;line-height:1.25;color:#52170c">Pimentas e Molhos</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Pimentas e Molhos</span>
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-torradas.png" alt="Torradas e Pães" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;line-height:1.25;color:#52170c">Torradas e Pães</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Torradas e Pães</span>
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-vinhos.png" alt="Vinhos" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;line-height:1.25;color:#52170c">Vinhos</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Vinhos</span>
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" data-reveal="" class="cat-link" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:8px 4px 14px;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.3,1),color .3s">
         <span style="width:100%;aspect-ratio:1;border-radius:999px;overflow:hidden;background:#f0e2d1;box-shadow:0 10px 24px rgba(82,23,12,.12);display:block">
           <img src="images/cat-cafes.png" alt="Cafés Artesanais" style="width:100%;height:100%;object-fit:cover;display:block">
         </span>
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;line-height:1.25;color:#52170c">Cafés Artesanais</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.25;color:#52170c">Cafés Artesanais</span>
       </a>
     </div>
   </div>
 </section>
 
-<section id="historia" style="background:#f6ede2;padding:clamp(72px,9vw,120px) clamp(18px,4vw,40px)">
+<section id="historia" style="background:#f6ede2;padding:100px 40px">
   <div style="max-width:1140px;margin:0 auto">
     <div data-reveal="" style="max-width:640px;margin-bottom:clamp(44px,6vw,72px)">
       <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#964904;font-weight:600">Nossa história</span>
@@ -166,16 +163,16 @@
       </div>
       <div data-reveal="" style="flex:1 1 340px">
         <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(22px,2.4vw,30px);line-height:1.15;color:#52170c;margin:0 0 14px">Começa na serra, com quem faz</h3>
-        <p style="font-size:17px;line-height:1.68;color:#6d5347;margin:0 0 14px;text-wrap:pretty">Cada pote que a gente vende tem nome e rosto por trás. Visitamos os sítios, provamos safra por safra e só entra no catálogo o que a gente serviria na própria mesa.</p>
-        <p style="font-size:17px;line-height:1.68;color:#6d5347;margin:0;text-wrap:pretty">Doce de leite no tacho de cobre, pimenta curtida em casa, café colhido na hora certa. Nada industrial, nada apressado.</p>
+        <p style="font-size:16px;line-height:1.68;color:#6d5347;margin:0 0 14px;text-wrap:pretty">Cada pote que a gente vende tem nome e rosto por trás. Visitamos os sítios, provamos safra por safra e só entra no catálogo o que a gente serviria na própria mesa.</p>
+        <p style="font-size:16px;line-height:1.68;color:#6d5347;margin:0;text-wrap:pretty">Doce de leite no tacho de cobre, pimenta curtida em casa, café colhido na hora certa. Nada industrial, nada apressado.</p>
       </div>
     </div>
 
     <div style="display:flex;flex-wrap:wrap-reverse;align-items:center;gap:clamp(28px,4vw,64px)">
       <div data-reveal="" style="flex:1 1 340px">
         <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(22px,2.4vw,30px);line-height:1.15;color:#52170c;margin:0 0 14px">Feito em Minas, feito com carinho</h3>
-        <p style="font-size:17px;line-height:1.68;color:#6d5347;margin:0 0 22px;text-wrap:pretty">Embalamos à mão, um a um, com o cuidado de quem manda presente pra alguém querido. Chega em casa inteiro, bonito e pronto pra abrir na hora do café.</p>
-        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#964904;margin:0">"Uai, que delícia!"</p>
+        <p style="font-size:16px;line-height:1.68;color:#6d5347;margin:0 0 22px;text-wrap:pretty">Embalamos à mão, um a um, com o cuidado de quem manda presente pra alguém querido. Chega em casa inteiro, bonito e pronto pra abrir na hora do café.</p>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#964904;margin:0">"Uai, que delícia!"</p>
       </div>
       <div style="flex:1 1 380px;border-radius:24px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 24px 50px rgba(82,23,12,.16)">
         <img src="images/historia-embalagem.png" alt="Embalagem artesanal / caixa presente" style="width:100%;height:100%;object-fit:cover;display:block">
@@ -184,51 +181,51 @@
 
     <div style="margin-top:clamp(56px,7vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,3vw,32px)">
       <div data-reveal="" style="border-top:2px solid rgba(150,73,4,.28);padding-top:18px">
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;color:#964904;letter-spacing:.04em">2016</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px;color:#964904;letter-spacing:.04em">2016</span>
         <p style="font-size:16px;line-height:1.55;color:#5c4438;margin:10px 0 0">Primeira feira, uma mesa e seis potes de geleia.</p>
       </div>
       <div data-reveal="" style="border-top:2px solid rgba(150,73,4,.28);padding-top:18px">
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;color:#964904;letter-spacing:.04em">2019</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px;color:#964904;letter-spacing:.04em">2019</span>
         <p style="font-size:16px;line-height:1.55;color:#5c4438;margin:10px 0 0">Loja física aberta, com queijo da Canastra na vitrine.</p>
       </div>
       <div data-reveal="" style="border-top:2px solid rgba(150,73,4,.28);padding-top:18px">
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;color:#964904;letter-spacing:.04em">2022</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px;color:#964904;letter-spacing:.04em">2022</span>
         <p style="font-size:16px;line-height:1.55;color:#5c4438;margin:10px 0 0">Doze produtores parceiros na serra.</p>
       </div>
       <div data-reveal="" style="border-top:2px solid rgba(150,73,4,.28);padding-top:18px">
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;color:#964904;letter-spacing:.04em">2025</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px;color:#964904;letter-spacing:.04em">2025</span>
         <p style="font-size:16px;line-height:1.55;color:#5c4438;margin:10px 0 0">O app no ar: Minas inteira a um toque.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="produtos" style="background:#fcf9f5;padding:clamp(72px,9vw,120px) clamp(18px,4vw,40px)">
+<section id="produtos" style="background:#fcf9f5;padding:100px 40px">
   <div style="max-width:1240px;margin:0 auto">
     <div data-reveal="" style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:18px;margin-bottom:clamp(32px,4vw,52px)">
       <div>
         <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#964904;font-weight:600">Mais pedidos</span>
         <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.06;letter-spacing:-.032em;color:#52170c;margin:12px 0 0">Os queridinhos da casa</h2>
-        <p style="font-size:17px;line-height:1.6;color:#8a6a5b;margin:12px 0 0;max-width:44ch">Uma amostra do que espera por você no app.</p>
+        <p style="font-size:16px;line-height:1.6;color:#7a5a4a;margin:12px 0 0;max-width:44ch">Uma amostra do que espera por você no app.</p>
       </div>
-      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:#964904;display:inline-flex;align-items:center;gap:8px;min-height:44px">Ver os +80 produtos no app →</a>
+      <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#964904;display:inline-flex;align-items:center;gap:8px;min-height:44px">Ver os +80 produtos no app →</a>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px;max-width:1120px">
 
       <article data-reveal="" class="prod-card" style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 12px rgba(82,23,12,.06);display:flex;flex-direction:column;transition:transform .6s cubic-bezier(.2,.7,.3,1),box-shadow .3s ease">
         <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#faf1e6">
           <img src="images/prod-geleia.png" alt="Geleia de pimenta" style="width:100%;height:100%;object-fit:cover;display:block">
-          <span style="position:absolute;top:12px;left:12px;z-index:2;background:rgba(252,249,245,.94);color:#6d2a10;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(82,23,12,.12)">Mais vendido</span>
+          <span style="position:absolute;top:12px;left:12px;z-index:2;background:rgba(252,249,245,.94);color:#6d2a10;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(82,23,12,.12)">Mais vendido</span>
         </div>
         <div style="padding:20px;display:flex;flex-direction:column;gap:5px;flex:1">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Geleias</span>
-            <span style="font-size:13px;color:#8a6a5b;white-space:nowrap">⭐ 4.9</span>
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Geleias</span>
+            <span style="font-size:14px;color:#7a5a4a;white-space:nowrap">⭐ 4.9</span>
           </div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Geleia de Pimenta com Blueberry</h3>
-          <span style="font-size:13px;color:#a8836b">250g</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Geleia de Pimenta com Blueberry</h3>
+          <span style="font-size:14px;color:#a8836b">250g</span>
           <div style="margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;color:#c98b45">R$ 32,90</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#c98b45">R$ 32,90</span>
             <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" class="prod-link" style="margin-left:auto;font-size:14px;font-weight:600;color:#964904;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:0 2px">Ver no app
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -239,17 +236,17 @@
       <article data-reveal="" class="prod-card" style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 12px rgba(82,23,12,.06);display:flex;flex-direction:column;transition:transform .6s cubic-bezier(.2,.7,.3,1),box-shadow .3s ease">
         <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#faf1e6">
           <img src="images/prod-doce-leite.png" alt="Doce de leite" style="width:100%;height:100%;object-fit:cover;display:block">
-          <span style="position:absolute;top:12px;left:12px;z-index:2;background:rgba(252,249,245,.94);color:#6d2a10;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(82,23,12,.12)">Feito à mão</span>
+          <span style="position:absolute;top:12px;left:12px;z-index:2;background:rgba(252,249,245,.94);color:#6d2a10;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(82,23,12,.12)">Feito à mão</span>
         </div>
         <div style="padding:20px;display:flex;flex-direction:column;gap:5px;flex:1">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Doces</span>
-            <span style="font-size:13px;color:#8a6a5b;white-space:nowrap">⭐ 5.0</span>
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Doces</span>
+            <span style="font-size:14px;color:#7a5a4a;white-space:nowrap">⭐ 5.0</span>
           </div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Doce de Leite Tradicional</h3>
-          <span style="font-size:13px;color:#a8836b">430g</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Doce de Leite Tradicional</h3>
+          <span style="font-size:14px;color:#a8836b">430g</span>
           <div style="margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;color:#c98b45">R$ 28,00</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#c98b45">R$ 28,00</span>
             <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" class="prod-link" style="margin-left:auto;font-size:14px;font-weight:600;color:#964904;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:0 2px">Ver no app
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -263,13 +260,13 @@
         </div>
         <div style="padding:20px;display:flex;flex-direction:column;gap:5px;flex:1">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Cafés</span>
-            <span style="font-size:13px;color:#8a6a5b;white-space:nowrap">⭐ 4.8</span>
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Cafés</span>
+            <span style="font-size:14px;color:#7a5a4a;white-space:nowrap">⭐ 4.8</span>
           </div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Café Especial Canastra</h3>
-          <span style="font-size:13px;color:#a8836b">250g</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Café Especial Canastra</h3>
+          <span style="font-size:14px;color:#a8836b">250g</span>
           <div style="margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;color:#c98b45">R$ 45,00</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#c98b45">R$ 45,00</span>
             <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" class="prod-link" style="margin-left:auto;font-size:14px;font-weight:600;color:#964904;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:0 2px">Ver no app
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -280,17 +277,17 @@
       <article data-reveal="" class="prod-card" style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 12px rgba(82,23,12,.06);display:flex;flex-direction:column;transition:transform .6s cubic-bezier(.2,.7,.3,1),box-shadow .3s ease">
         <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#faf1e6">
           <img src="images/prod-antepasto.png" alt="Antepasto de berinjela" style="width:100%;height:100%;object-fit:cover;display:block">
-          <span style="position:absolute;top:12px;left:12px;z-index:2;background:rgba(252,249,245,.94);color:#6d2a10;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(82,23,12,.12)">Novo</span>
+          <span style="position:absolute;top:12px;left:12px;z-index:2;background:rgba(252,249,245,.94);color:#6d2a10;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(82,23,12,.12)">Novo</span>
         </div>
         <div style="padding:20px;display:flex;flex-direction:column;gap:5px;flex:1">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Antepastos</span>
-            <span style="font-size:13px;color:#8a6a5b;white-space:nowrap">⭐ 4.7</span>
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Antepastos</span>
+            <span style="font-size:14px;color:#7a5a4a;white-space:nowrap">⭐ 4.7</span>
           </div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Antepasto de Berinjela</h3>
-          <span style="font-size:13px;color:#a8836b">300g</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Antepasto de Berinjela</h3>
+          <span style="font-size:14px;color:#a8836b">300g</span>
           <div style="margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;color:#c98b45">R$ 34,50</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#c98b45">R$ 34,50</span>
             <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" class="prod-link" style="margin-left:auto;font-size:14px;font-weight:600;color:#964904;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:0 2px">Ver no app
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -304,13 +301,13 @@
         </div>
         <div style="padding:20px;display:flex;flex-direction:column;gap:5px;flex:1">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Vinhos</span>
-            <span style="font-size:13px;color:#8a6a5b;white-space:nowrap">⭐ 4.9</span>
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Vinhos</span>
+            <span style="font-size:14px;color:#7a5a4a;white-space:nowrap">⭐ 4.9</span>
           </div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Vinho Tinto de Andradas</h3>
-          <span style="font-size:13px;color:#a8836b">750ml</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Vinho Tinto de Andradas</h3>
+          <span style="font-size:14px;color:#a8836b">750ml</span>
           <div style="margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;color:#c98b45">R$ 89,00</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#c98b45">R$ 89,00</span>
             <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" class="prod-link" style="margin-left:auto;font-size:14px;font-weight:600;color:#964904;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:0 2px">Ver no app
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -321,17 +318,17 @@
       <article data-reveal="" class="prod-card" style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 12px rgba(82,23,12,.06);display:flex;flex-direction:column;transition:transform .6s cubic-bezier(.2,.7,.3,1),box-shadow .3s ease">
         <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#faf1e6">
           <img src="images/prod-torradas.jpeg" alt="Torradas rústicas" style="width:100%;height:100%;object-fit:cover;display:block">
-          <span style="position:absolute;top:12px;left:12px;z-index:2;background:rgba(252,249,245,.94);color:#6d2a10;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(82,23,12,.12)">Feito à mão</span>
+          <span style="position:absolute;top:12px;left:12px;z-index:2;background:rgba(252,249,245,.94);color:#6d2a10;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(82,23,12,.12)">Feito à mão</span>
         </div>
         <div style="padding:20px;display:flex;flex-direction:column;gap:5px;flex:1">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Pães</span>
-            <span style="font-size:13px;color:#8a6a5b;white-space:nowrap">⭐ 4.8</span>
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a8836b;font-weight:600">Pães</span>
+            <span style="font-size:14px;color:#7a5a4a;white-space:nowrap">⭐ 4.8</span>
           </div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Torradas de Fermentação Natural</h3>
-          <span style="font-size:13px;color:#a8836b">180g</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:#52170c;margin:2px 0 0;text-wrap:pretty">Torradas de Fermentação Natural</h3>
+          <span style="font-size:14px;color:#a8836b">180g</span>
           <div style="margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;color:#c98b45">R$ 19,90</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#c98b45">R$ 19,90</span>
             <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" class="prod-link" style="margin-left:auto;font-size:14px;font-weight:600;color:#964904;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:0 2px">Ver no app
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -343,102 +340,102 @@
   </div>
 </section>
 
-<section id="como" style="background:#f6ede2;padding:clamp(72px,9vw,116px) clamp(18px,4vw,40px)">
+<section id="como" style="background:#f6ede2;padding:100px 40px">
   <div style="max-width:1080px;margin:0 auto">
     <h2 data-reveal="" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.06;letter-spacing:-.032em;color:#52170c;margin:0 0 clamp(36px,5vw,56px);max-width:16ch">Três toques até a sua mesa</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(20px,3vw,36px)">
       <div data-reveal="">
-        <span style="width:56px;height:56px;border-radius:999px;background:#d8a360;color:#52170c;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;display:grid;place-items:center;margin-bottom:18px">1</span>
-        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.2;color:#52170c;margin:0 0 8px">Baixe o app</h3>
+        <span style="width:56px;height:56px;border-radius:999px;background:#d8a360;color:#52170c;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;display:grid;place-items:center;margin-bottom:18px">1</span>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;line-height:1.2;color:#52170c;margin:0 0 8px">Baixe o app</h3>
         <p style="font-size:16px;line-height:1.6;color:#6d5347;margin:0">Gratuito na Play Store. Cadastro em menos de um minuto.</p>
       </div>
       <div data-reveal="">
-        <span style="width:56px;height:56px;border-radius:999px;background:#d8a360;color:#52170c;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;display:grid;place-items:center;margin-bottom:18px">2</span>
-        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.2;color:#52170c;margin:0 0 8px">Escolha entrega ou retirada</h3>
+        <span style="width:56px;height:56px;border-radius:999px;background:#d8a360;color:#52170c;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;display:grid;place-items:center;margin-bottom:18px">2</span>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;line-height:1.2;color:#52170c;margin:0 0 8px">Escolha entrega ou retirada</h3>
         <p style="font-size:16px;line-height:1.6;color:#6d5347;margin:0">Monte sua cesta e decida como quer receber.</p>
       </div>
       <div data-reveal="">
-        <span style="width:56px;height:56px;border-radius:999px;background:#d8a360;color:#52170c;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;display:grid;place-items:center;margin-bottom:18px">3</span>
-        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.2;color:#52170c;margin:0 0 8px">Receba ou retire com código</h3>
+        <span style="width:56px;height:56px;border-radius:999px;background:#d8a360;color:#52170c;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;display:grid;place-items:center;margin-bottom:18px">3</span>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;line-height:1.2;color:#52170c;margin:0 0 8px">Receba ou retire com código</h3>
         <p style="font-size:16px;line-height:1.6;color:#6d5347;margin:0">Chega na sua porta ou espera por você na loja.</p>
       </div>
     </div>
-    <p data-reveal="" style="font-size:15px;color:#8a6a5b;margin:clamp(32px,4vw,44px) 0 0">PIX e cartão aceitos • frete calculado no app • retirada com código na loja</p>
+    <p data-reveal="" style="font-size:14px;color:#7a5a4a;margin:clamp(32px,4vw,44px) 0 0">PIX e cartão aceitos • frete calculado no app • retirada com código na loja</p>
   </div>
 </section>
 
-<section style="background:#fcf9f5;padding:clamp(72px,9vw,116px) clamp(18px,4vw,40px)">
+<section style="background:#fcf9f5;padding:100px 40px">
   <div style="max-width:1180px;margin:0 auto">
     <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,60px);align-items:center;justify-content:space-between;margin-bottom:clamp(40px,5vw,64px)">
       <h2 data-reveal="" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.06;letter-spacing:-.032em;color:#52170c;margin:0;flex:1 1 320px">Quem prova, volta</h2>
       <div data-reveal="" style="display:flex;gap:clamp(28px,4vw,52px);flex:0 1 auto">
         <div>
           <span data-count="120" data-count-prefix="+" style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(34px,4vw,46px);color:#964904;line-height:1">+0</span>
-          <span style="font-size:14px;color:#8a6a5b">produtos no app</span>
+          <span style="font-size:14px;color:#7a5a4a">produtos no app</span>
         </div>
         <div>
           <span data-count="500" data-count-prefix="+" style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(34px,4vw,46px);color:#964904;line-height:1">+0</span>
-          <span style="font-size:14px;color:#8a6a5b">clientes felizes</span>
+          <span style="font-size:14px;color:#7a5a4a">clientes felizes</span>
         </div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(18px,2.4vw,28px)">
       <figure data-reveal="" style="margin:0;background:#fff;border-radius:20px;padding:28px 26px;box-shadow:0 8px 22px rgba(82,23,12,.08);display:flex;flex-direction:column;gap:16px">
-        <span style="color:#d8a360;font-size:15px;letter-spacing:.18em">★★★★★</span>
-        <blockquote style="margin:0;font-size:17px;line-height:1.6;color:#4a352b;text-wrap:pretty">Pedi como presente de aniversário da minha mãe e ela ligou chorando. A geleia de pimenta virou febre lá em casa.</blockquote>
-        <figcaption style="margin-top:auto;font-size:14px;color:#8a6a5b"><strong style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#52170c">Luciana R.</strong> · Belo Horizonte</figcaption>
+        <span style="color:#d8a360;font-size:14px;letter-spacing:.18em">★★★★★</span>
+        <blockquote style="margin:0;font-size:16px;line-height:1.6;color:#4a352b;text-wrap:pretty">Pedi como presente de aniversário da minha mãe e ela ligou chorando. A geleia de pimenta virou febre lá em casa.</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;color:#7a5a4a"><strong style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#52170c">Luciana R.</strong> · Belo Horizonte</figcaption>
       </figure>
       <figure data-reveal="" style="margin:0;background:#fff;border-radius:20px;padding:28px 26px;box-shadow:0 8px 22px rgba(82,23,12,.08);display:flex;flex-direction:column;gap:16px">
-        <span style="color:#d8a360;font-size:15px;letter-spacing:.18em">★★★★★</span>
-        <blockquote style="margin:0;font-size:17px;line-height:1.6;color:#4a352b;text-wrap:pretty">Comprei na viagem, voltei pra São Paulo e continuei pedindo pelo app. Chega rápido e sempre bem embalado.</blockquote>
-        <figcaption style="margin-top:auto;font-size:14px;color:#8a6a5b"><strong style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#52170c">Marcos A.</strong> · São Paulo</figcaption>
+        <span style="color:#d8a360;font-size:14px;letter-spacing:.18em">★★★★★</span>
+        <blockquote style="margin:0;font-size:16px;line-height:1.6;color:#4a352b;text-wrap:pretty">Comprei na viagem, voltei pra São Paulo e continuei pedindo pelo app. Chega rápido e sempre bem embalado.</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;color:#7a5a4a"><strong style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#52170c">Marcos A.</strong> · São Paulo</figcaption>
       </figure>
       <figure data-reveal="" style="margin:0;background:#fff;border-radius:20px;padding:28px 26px;box-shadow:0 8px 22px rgba(82,23,12,.08);display:flex;flex-direction:column;gap:16px">
-        <span style="color:#d8a360;font-size:15px;letter-spacing:.18em">★★★★★</span>
-        <blockquote style="margin:0;font-size:17px;line-height:1.6;color:#4a352b;text-wrap:pretty">O café da Canastra mudou minha manhã. Atendimento no WhatsApp é de gente que gosta do que faz.</blockquote>
-        <figcaption style="margin-top:auto;font-size:14px;color:#8a6a5b"><strong style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#52170c">Renata M.</strong> · Uberlândia</figcaption>
+        <span style="color:#d8a360;font-size:14px;letter-spacing:.18em">★★★★★</span>
+        <blockquote style="margin:0;font-size:16px;line-height:1.6;color:#4a352b;text-wrap:pretty">O café da Canastra mudou minha manhã. Atendimento no WhatsApp é de gente que gosta do que faz.</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;color:#7a5a4a"><strong style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#52170c">Renata M.</strong> · Uberlândia</figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<section id="onde" style="background:#fcf9f5;padding:clamp(64px,8vw,96px) clamp(20px,5vw,60px);border-top:1px solid #ece0d3">
+<section id="onde" style="background:#fcf9f5;padding:80px 60px;border-top:1px solid #ece0d3">
   <div style="max-width:1240px;margin:0 auto">
     <div data-reveal="" style="max-width:640px;margin-bottom:clamp(32px,4vw,48px)">
       <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.08;color:#52170c;margin:0 0 12px">Onde nos encontrar</h2>
-      <p style="font-size:17px;line-height:1.6;color:#6d5347;margin:0">Visite nosso espaço na Serra da Canastra.</p>
+      <p style="font-size:16px;line-height:1.6;color:#6d5347;margin:0">Visite nosso espaço na Serra da Canastra.</p>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:stretch">
       <div data-reveal="" style="flex:1 1 460px;min-width:280px">
         <iframe title="Mapa — Empório Coisas de Minas, Rua dos Piantinos 657, Passos MG" src="https://www.google.com/maps?q=Rua%20dos%20Piantinos%2C%20657%2C%20Passos%20-%20MG&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%;height:450px;min-height:350px;border:0;display:block;border-radius:16px;box-shadow:0 12px 30px rgba(82,23,12,.12)"></iframe>
       </div>
-      <div data-reveal="" style="flex:1 1 320px;min-width:280px;background:#f6ede2;border-radius:16px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:26px">
+      <div data-reveal="" style="flex:1 1 320px;min-width:280px;background:#f6ede2;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:26px">
         <div style="display:flex;gap:14px;align-items:flex-start">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d8a360" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           <div style="flex:1 1 auto;min-width:0">
-            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#52170c;margin:0 0 6px">Endereço</p>
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#52170c;margin:0 0 6px">Endereço</p>
             <p style="font-size:16px;line-height:1.65;color:#6d5347;margin:0">Rua dos Piantinos, 657<br>Bairro Muarama<br>Passos&nbsp;·&nbsp;MG</p>
           </div>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d8a360" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px" aria-hidden="true"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 4.2 2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L7.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"></path></svg>
           <div style="flex:1 1 auto;min-width:0">
-            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#52170c;margin:0 0 6px">WhatsApp</p>
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#52170c;margin:0 0 6px">WhatsApp</p>
             <p style="font-size:16px;line-height:1.65;color:#6d5347;margin:0 0 12px">(35) 99898-7421</p>
-            <a href="https://wa.me/5535998987421" target="_blank" rel="noopener" class="whats-cta" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#d8a360;color:#3d1108;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;padding:13px 22px;border-radius:999px;min-height:48px;white-space:nowrap;transition:background .25s ease,transform .25s ease">Falar no WhatsApp</a>
+            <a href="https://wa.me/5535998987421" target="_blank" rel="noopener" class="whats-cta" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#d8a360;color:#3d1108;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px;padding:13px 22px;border-radius:999px;min-height:48px;white-space:nowrap;transition:background .25s ease,transform .25s ease">Falar no WhatsApp</a>
           </div>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d8a360" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".6" fill="#d8a360"></circle></svg>
           <div style="flex:1 1 auto;min-width:0">
-            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#52170c;margin:0 0 6px">Instagram</p>
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#52170c;margin:0 0 6px">Instagram</p>
             <a href="https://www.instagram.com/emporiocoisasdeminaspassos?igsh=MWVyMDhyN3htNTg2ZA==" target="_blank" rel="noopener" class="ig-link" style="font-size:16px;line-height:1.65;color:#964904;text-decoration:none;word-break:break-word">@emporiocoisasdeminaspassos</a>
           </div>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d8a360" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
           <div style="flex:1 1 auto;min-width:0">
-            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#52170c;margin:0 0 6px">Horário de funcionamento</p>
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#52170c;margin:0 0 6px">Horário de funcionamento</p>
             <p style="font-size:16px;line-height:1.65;color:#6d5347;margin:0">Seg a Sábado: 9h às 18h<br>Domingo: fechado</p>
           </div>
         </div>
@@ -447,52 +444,51 @@
   </div>
 </section>
 
-<section style="background:#52170c;color:#fcf9f5;padding:clamp(72px,9vw,120px) clamp(18px,4vw,40px)">
+<section style="background:#52170c;color:#fcf9f5;padding:100px 40px">
   <div style="max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(32px,5vw,72px);text-align:center">
     <div data-reveal="" style="flex:1 1 380px;text-align:left">
       <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4.6vw,54px);line-height:1.05;letter-spacing:-.034em;margin:0 0 16px;text-wrap:balance">Baixe o app e receba Minas em casa</h2>
-      <p style="font-size:17px;line-height:1.6;color:#e0c4ae;margin:0 0 30px;max-width:44ch">Catálogo completo, entrega na sua porta ou retirada na loja. Leva um minuto.</p>
+      <p style="font-size:16px;line-height:1.6;color:#e0c4ae;margin:0 0 30px;max-width:44ch">Catálogo completo, entrega na sua porta ou retirada na loja. Leva um minuto.</p>
       <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" aria-label="Disponível no Google Play" class="cta-play" style="padding:14px 30px 14px 24px;border-radius:18px;min-height:64px;box-shadow:0 16px 34px rgba(0,0,0,.28)">
         <svg width="30" height="33" viewBox="0 0 512 566" aria-hidden="true"><path fill="#52170c" d="M20 8C10 18 4 33 4 53v460c0 20 6 35 16 45l2 2 258-258v-6L22 38z"></path><path fill="#7a3418" d="M366 397 280 311v-6l86-86 2 1 102 58c29 17 29 44 0 61z"></path><path fill="#6b2612" d="m368 396-88-88L20 568c10 10 25 11 43 1z"></path><path fill="#3d1108" d="M368 220 63 47C45 37 30 38 20 48l260 260z"></path></svg>
-        <span style="display:flex;flex-direction:column;line-height:1.1;text-align:left"><span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#7a3418">Disponível no</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:23px;letter-spacing:-.01em;white-space:nowrap">Google Play</span></span>
-        <span class="shine" style="width:44px"></span>
+        <span style="display:flex;flex-direction:column;line-height:1.1;text-align:left"><span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#7a3418">Disponível no</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.01em;white-space:nowrap">Google Play</span></span>
       </a>
     </div>
     <div data-reveal="" style="transition-delay:140ms;flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:12px">
       <span style="background:#fcf9f5;padding:14px;border-radius:20px;display:block"><img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=0&color=52170c&bgcolor=fcf9f5&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.emporiocoisasdeminas" alt="QR code para baixar o app na Google Play" width="160" height="160" style="display:block;width:160px;height:160px"></span>
-      <span style="font-size:13px;color:#e0c4ae;max-width:18ch;line-height:1.4">Aponte a câmera e baixe no celular</span>
+      <span style="font-size:14px;color:#e0c4ae;max-width:18ch;line-height:1.4">Aponte a câmera e baixe no celular</span>
     </div>
   </div>
 </section>
 
-<footer id="contato" style="background:#3d1108;color:#e0c4ae;padding:clamp(52px,6vw,76px) clamp(18px,4vw,40px) 28px">
+<footer id="contato" style="background:#3d1108;color:#e0c4ae;padding:60px 40px 28px">
   <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));align-items:start;gap:clamp(28px,4vw,56px)">
     <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
       <img src="images/logo.png" alt="Empório Coisas de Minas" style="height: 118px; width: auto; display: block">
-      <p style="font-size:15px;line-height:1.6;margin:0;max-width:230px">Feito em Minas, feito com carinho.</p>
+      <p style="font-size:14px;line-height:1.6;margin:0;max-width:230px">Feito em Minas, feito com carinho.</p>
     </div>
     <div>
       <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#fcf9f5;margin:0 0 14px">Fale com a gente</h3>
-      <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;align-items:flex-start">
         <a href="https://wa.me/5535998987421" target="_blank" rel="noopener" class="foot-link" style="color:#e0c4ae;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap">WhatsApp (35) 99898-7421</a>
         <a href="https://www.instagram.com/emporiocoisasdeminaspassos?igsh=MWVyMDhyN3htNTg2ZA==" target="_blank" rel="noopener" class="foot-link" style="color:#e0c4ae;min-height:44px;display:inline-flex;align-items:center;line-height:1.4;word-break:break-word">@emporiocoisasdeminaspassos</a>
       </div>
     </div>
     <div>
       <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#fcf9f5;margin:0 0 14px">Loja</h3>
-      <p style="font-size:15px;line-height:1.75;margin:0;max-width:220px">Rua dos Piantinos, 657 — Bairro Muarama<br>Passos&nbsp;·&nbsp;MG</p>
-      <p style="font-size:15px;line-height:1.75;margin:12px 0 0;color:#c9a58c">Seg a Sáb, 9h às 18h</p>
+      <p style="font-size:14px;line-height:1.75;margin:0;max-width:220px">Rua dos Piantinos, 657 — Bairro Muarama<br>Passos&nbsp;·&nbsp;MG</p>
+      <p style="font-size:14px;line-height:1.75;margin:12px 0 0;color:#c9a58c">Seg a Sáb, 9h às 18h</p>
     </div>
     <div>
       <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#fcf9f5;margin:0 0 14px">Baixe já</h3>
       <a href="https://play.google.com/store/apps/details?id=com.emporiocoisasdeminas" target="_blank" rel="noopener" aria-label="Disponível no Google Play" class="dl-btn" style="display:inline-flex;align-items:center;gap:11px;background:#52170c;color:#fcf9f5;padding:10px 20px 10px 16px;border-radius:14px;min-height:52px;transition:background .25s ease">
         <svg width="22" height="24" viewBox="0 0 512 566" aria-hidden="true"><path fill="#d8a360" d="M20 8C10 18 4 33 4 53v460c0 20 6 35 16 45l2 2 258-258v-6L22 38z"></path><path fill="#e8bb7f" d="M366 397 280 311v-6l86-86 2 1 102 58c29 17 29 44 0 61z"></path><path fill="#c98b45" d="m368 396-88-88L20 568c10 10 25 11 43 1z"></path><path fill="#a86a2d" d="M368 220 63 47C45 37 30 38 20 48l260 260z"></path></svg>
-        <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#e8c79a">Disponível no</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;white-space:nowrap">Google Play</span></span>
+        <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#e8c79a">Disponível no</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;white-space:nowrap">Google Play</span></span>
       </a>
     </div>
   </div>
   <div style="max-width:1180px;margin:clamp(36px,4.5vw,52px) auto 0;padding-top:20px;border-top:1px solid rgba(224,196,174,.18)">
-    <p style="font-size:13px;color:#a8836b;margin:0;text-align:center">© 2026 Empório Coisas de Minas · feito por <a href="https://www.instagram.com/jehu_dev_e.commerce?igsh=MXg3aXhxamlxenM4bA==" target="_blank" rel="noopener" class="credit-link" style="color:#c9a58c;text-decoration:none;border-bottom:1px solid rgba(216,163,96,.4)">@jehu_dev_e.commerce</a></p>
+    <p style="font-size:14px;color:#a8836b;margin:0;text-align:center">© 2026 Empório Coisas de Minas · feito por <a href="https://www.instagram.com/jehu_dev_e.commerce?igsh=MXg3aXhxamlxenM4bA==" target="_blank" rel="noopener" class="credit-link" style="color:#c9a58c;text-decoration:none;border-bottom:1px solid rgba(216,163,96,.4)">@jehu_dev_e.commerce</a></p>
   </div>
 </footer>
 
@@ -562,7 +558,6 @@
       header.style.background = on ? 'rgba(252,249,245,.75)' : 'rgba(61,17,8,.34)';
       header.style.borderBottom = '1px solid ' + (on ? 'rgba(82,23,12,.08)' : 'rgba(252,249,245,.14)');
       header.style.boxShadow = on ? '0 6px 24px rgba(82,23,12,.10)' : '0 2px 18px rgba(61,17,8,.14)';
-      header.style.padding = on ? '2px 0' : '4px 0';
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
